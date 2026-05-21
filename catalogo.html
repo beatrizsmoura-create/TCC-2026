@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Wagner Oliveira Mega Hair</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="LOGO.png" alt="Wagner Oliveira Logo" class="brand-logo-img">
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html">INÍCIO</a>
+                <a href="catalogo.html" class="active">CATÁLOGO</a>
+                <a href="#">PERSONALIZAR</a>
+                <a href="#">SOBRE</a>
+                <a href="#">CONTATO</a>
+            </nav>
+            <div class="header-actions">
+                <button><i class="bi bi-search"></i></button>
+                <button><i class="bi bi-cart"></i></button>
+                <button><i class="bi bi-person"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="catalog-page-container">
+        
+        <aside class="sidebar-filters">
+            <h2 class="sidebar-title">FILTROS</h2>
+            
+            <div class="filter-box-vertical">
+                <label>COMPRIMENTO</label>
+                <select id="cat-comprimento">
+                    <option>Todos</option>
+                    <option>50 cm</option>
+                    <option>55 cm</option>
+                    <option>60 cm</option>
+                </select>
+            </div>
+
+            <div class="filter-box-vertical">
+                <label>COR</label>
+                <select id="cat-cor">
+                    <option>Todos</option>
+                    <option>Loiro Mel</option>
+                    <option>Castanho Escuro</option>
+                    <option>Loiro Platinado</option>
+                    <option>Preto Natural</option>
+                    <option>Castanho Médio</option>
+                    <option>Loiro Claro</option>
+                </select>
+            </div>
+
+            <div class="filter-box-vertical">
+                <label>TEXTURA</label>
+                <select id="cat-textura">
+                    <option>Todos</option>
+                    <option>Liso</option>
+                    <option>Ondulado</option>
+                </select>
+            </div>
+
+            <div class="filter-box-vertical">
+                <label>DISPONIBILIDADE</label>
+                <select id="cat-disponibilidade">
+                    <option>Todos</option>
+                    <option>Em Estoque</option>
+                    <option>Sob Encomenda</option>
+                </select>
+            </div>
+
+            <button class="btn-sidebar-filter" onclick="filtrarCatalogo()">FILTRAR ⚙️</button>
+        </aside>
+
+        <section class="catalog-main-content">
+            <div class="results-count">
+                <span id="contador-resultados">6 resultados encontrados</span>
+            </div>
+
+            <div class="products-catalog-grid" id="catalogo-produtos-grid">
+                </div>
+
+            <div class="load-more-wrapper">
+                <button class="btn-load-more">CARREGAR MAIS</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col-brand">
+                <div class="logo footer-logo">
+                    <img src="LOGO.png" alt="Wagner Oliveira Logo" class="brand-logo-img">
+                </div>
+                <p class="brand-footer-text">Excelência em Mega Hair com fios selecionados e um atendimento exclusivo</p>
+            </div>
+            <div class="footer-col">
+                <h4>MENU</h4>
+                <a href="index.html">Início</a>
+                <a href="catalogo.html">Catálogo</a>
+                <a href="#">Personalizar</a>
+                <a href="#">Sobre</a>
+                <a href="#">Contato</a>
+            </div>
+            <div class="footer-col">
+                <h4>INFORMAÇÕES</h4>
+                <a href="#">Perguntas Frequentes</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Trocas e Devoluções</a>
+                <a href="#">Termo de Uso</a>
+            </div>
+            <div class="footer-col">
+                <h4>ATENDIMENTO</h4>
+                <a href="#">💬 Fale no WhatsApp</a>
+                <a href="#">🗓️ Agende sua avaliação</a>
+                <a href="#">📸 @wagneroliveira.hair</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Wagner Oliveira Mega Hair. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="modal-personalizar" class="modal-backdrop hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 id="modal-title">Personalizar</h2>
+                <button class="close-modal" onclick="closeModal()"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-subtitle">Configure as opções exclusivas para o seu cabelo selecionado.</p>
+                <div class="modal-step">
+                    <label>1. Textura Desejada</label>
+                    <div class="options-row">
+                        <button class="opt-btn" onclick="selectOpt(this, 'textura')">Liso Natural</button>
+                        <button class="opt-btn" onclick="selectOpt(this, 'textura')">Ondulado</button>
+                        <button class="opt-btn" onclick="selectOpt(this, 'textura')">Cacheado</button>
+                    </div>
+                </div>
+                <div class="modal-step">
+                    <label>2. Espessura do Fio</label>
+                    <div class="options-vertical">
+                        <button class="opt-row-btn" onclick="selectOpt(this, 'espessura')"><strong>Fio Fino</strong><span>Ideal para cabelos finos/ralos</span></button>
+                        <button class="opt-row-btn" onclick="selectOpt(this, 'espessura')"><strong>Fio Médio</strong><span>Padrão, se adapta bem à maioria</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
