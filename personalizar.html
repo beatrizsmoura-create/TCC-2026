@@ -34,79 +34,73 @@
         </div>
     </header>
 
-    <main class="catalog-page-container">
-        <div class="custom-grid-container">
+    <main class="catalog-page-container" style="padding-top: 40px; padding-bottom: 80px;">
+        <div class="catalog-container" style="width: 100%; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
             
-            <section class="custom-column">
-                <div class="custom-preview-side">
-                    <h2 class="section-title">SEU PRODUTO</h2>
-                    <div class="title-underline"></div>
-                    
-                    <div id="custom-product-image" class="custom-product-image-box">
-                        <div class="custom-product-image-placeholder">
-                            <i class="bi bi-image"></i>
-                        </div>
-                    </div>
-                    
-                    <h3 id="custom-product-name" class="product-name" style="font-size: 1.6rem; text-align: center; margin-bottom: 15px;">Nenhum item selecionado</h3>
-                    
-                    <div class="resumo-detalhes">
-                        <h4>CONFIGURAÇÃO DO SEU MEGA HAIR:</h4>
-                        <p><strong>Cor:</strong> <span id="resumo-cor">Padrão</span></p>
-                        <p><strong>Comprimento:</strong> <span id="resumo-comprimento">Padrão</span></p>
-                        <p><strong>Textura:</strong> <span id="resumo-textura">Padrão</span></p>
-                        <p><strong>Espessura do Fio:</strong> <span id="resumo-espessura">Padrão</span></p>
-                    </div>
+            <section class="custom-preview-side" style="background: #111; padding: 30px; border: 1px solid #262626; border-radius: 8px; text-align: center;">
+                <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 10px;">SEU PRODUTO</h2>
+                <div class="title-underline" style="width: 80px; height: 3px; background: #bfa15f; margin: 0 auto 30px auto;"></div>
+                
+                <div id="custom-product-image" style="width: 100%; max-width: 350px; height: 350px; margin: 0 auto 20px auto; overflow: hidden; border-radius: 4px; border: 1px solid #262626;">
+                    <div style="height: 100%; display: flex; align-items: center; justify-content: center; color: #666;"><i class="bi bi-image" style="font-size: 3rem;"></i></div>
+                </div>
+                
+                <h3 id="custom-product-name" style="font-family: 'Playfair Display', serif; color: #fff; font-size: 1.6rem; margin-bottom: 15px;">Nenhum item selecionado</h3>
+                
+                <div style="background: #1a1a1a; padding: 20px; border-radius: 4px; text-align: left; margin-top: 20px; border-left: 3px solid #bfa15f;">
+                    <h4 style="color: #bfa15f; font-size: 0.9rem; margin-top: 0; margin-bottom: 12px; letter-spacing: 1px;">CONFIGURAÇÃO DO SEU MEGA HAIR:</h4>
+                    <p style="margin: 6px 0; font-size: 0.95rem;"><strong>Cor:</strong> <span id="resumo-cor" style="color: #bfa15f;">Padrão</span></p>
+                    <p style="margin: 6px 0; font-size: 0.95rem;"><strong>Comprimento:</strong> <span id="resumo-comprimento" style="color: #bfa15f;">Padrão</span></p>
+                    <p style="margin: 6px 0; font-size: 0.95rem;"><strong>Textura:</strong> <span id="resumo-textura" style="color: #bfa15f;">Padrão</span></p>
+                    <p style="margin: 6px 0; font-size: 0.95rem;"><strong>Espessura do Fio:</strong> <span id="resumo-espessura" style="color: #bfa15f;">Padrão</span></p>
                 </div>
             </section>
 
-            <section class="custom-column">
-                <div class="custom-options-side">
-                    <h2 class="section-title" style="text-align: left;">ALTERAR ESPECIFICAÇÕES</h2>
-                    <div class="title-underline" style="margin-left: 0;"></div>
+            <section class="custom-options-side" style="background: #111; padding: 30px; border: 1px solid #262626; border-radius: 8px;">
+                <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 10px; text-align: left;">ALTERAR ESPECIFICAÇÕES</h2>
+                <div class="title-underline" style="width: 80px; height: 3px; background: #bfa15f; margin-left: 0; margin-bottom: 30px;"></div>
 
-                    <div class="custom-select-group">
-                        <label>1. ALTERAR COR DO CABELO</label>
-                        <select id="change-cor" onchange="atualizarEspecificacoesDaPagina()" class="custom-select-field">
-                            <option value="Loiro Mel">Loiro Mel</option>
-                            <option value="Castanho Escuro">Castanho Escuro</option>
-                            <option value="Loiro Platinado">Loiro Platinado</option>
-                            <option value="Preto Natural">Preto Natural</option>
-                            <option value="Castanho Médio">Castanho Médio</option>
-                            <option value="Loiro Claro">Loiro Claro</option>
-                        </select>
-                    </div>
-
-                    <div class="custom-select-group">
-                        <label>2. ALTERAR COMPRIMENTO</label>
-                        <select id="change-comprimento" onchange="atualizarEspecificacoesDaPagina()" class="custom-select-field">
-                            <option value="50 cm">50 cm</option>
-                            <option value="55 cm">55 cm</option>
-                            <option value="60 cm">60 cm</option>
-                            <option value="65 cm">65 cm</option>
-                            <option value="70 cm">70 cm</option>
-                        </select>
-                    </div>
-
-                    <div class="custom-select-group">
-                        <label>3. ALTERAR TEXTURA DO FIO</label>
-                        <select id="change-textura" onchange="atualizarEspecificacoesDaPagina()" class="custom-select-field">
-                            <option value="Liso Natural">Liso Natural</option>
-                            <option value="Ondulado">Ondulado</option>
-                            <option value="Cacheado">Cacheado</option>
-                        </select>
-                    </div>
-
-                    <div class="custom-select-group" style="margin-bottom: 35px;">
-                        <label>4. ALTERAR ESPESSURA DO FIO</label>
-                        <select id="change-espessura" onchange="atualizarEspecificacoesDaPagina()" class="custom-select-field">
-                            <option value="Fio Fino">Fio Fino (Ideal para preenchimento sutil)</option>
-                            <option value="Fio Médio">Fio Médio (Padrão adaptável premium)</option>
-                        </select>
-                    </div>
-
-                    <button class="btn-gold" onclick="salvarEAvancar()" style="width: 100%;">SALVAR CONFIGURAÇÃO FINAL <span>▶</span></button>
+                <div class="filter-box-vertical" style="margin-bottom: 25px;">
+                    <label style="color: #bfa15f; font-weight: bold; margin-bottom: 8px; display: block; font-size: 0.85rem; letter-spacing: 1px;">1. ALTERAR COR DO CABELO</label>
+                    <select id="change-cor" onchange="atualizarEspecificacoesDaPagina()" style="width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #262626; color: #fff; border-radius: 4px; outline: none;">
+                        <option value="Loiro Mel">Loiro Mel</option>
+                        <option value="Castanho Escuro">Castanho Escuro</option>
+                        <option value="Loiro Platinado">Loiro Platinado</option>
+                        <option value="Preto Natural">Preto Natural</option>
+                        <option value="Castanho Médio">Castanho Médio</option>
+                        <option value="Loiro Claro">Loiro Claro</option>
+                    </select>
                 </div>
+
+                <div class="filter-box-vertical" style="margin-bottom: 25px;">
+                    <label style="color: #bfa15f; font-weight: bold; margin-bottom: 8px; display: block; font-size: 0.85rem; letter-spacing: 1px;">2. ALTERAR COMPRIMENTO</label>
+                    <select id="change-comprimento" onchange="atualizarEspecificacoesDaPagina()" style="width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #262626; color: #fff; border-radius: 4px; outline: none;">
+                        <option value="50 cm">50 cm</option>
+                        <option value="55 cm">55 cm</option>
+                        <option value="60 cm">60 cm</option>
+                        <option value="65 cm">65 cm</option>
+                        <option value="70 cm">70 cm</option>
+                    </select>
+                </div>
+
+                <div class="filter-box-vertical" style="margin-bottom: 25px;">
+                    <label style="color: #bfa15f; font-weight: bold; margin-bottom: 8px; display: block; font-size: 0.85rem; letter-spacing: 1px;">3. ALTERAR TEXTURA DO FIO</label>
+                    <select id="change-textura" onchange="atualizarEspecificacoesDaPagina()" style="width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #262626; color: #fff; border-radius: 4px; outline: none;">
+                        <option value="Liso Natural">Liso Natural</option>
+                        <option value="Ondulado">Ondulado</option>
+                        <option value="Cacheado">Cacheado</option>
+                    </select>
+                </div>
+
+                <div class="filter-box-vertical" style="margin-bottom: 35px;">
+                    <label style="color: #bfa15f; font-weight: bold; margin-bottom: 8px; display: block; font-size: 0.85rem; letter-spacing: 1px;">4. ALTERAR ESPESSURA DO FIO</label>
+                    <select id="change-espessura" onchange="atualizarEspecificacoesDaPagina()" style="width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #262626; color: #fff; border-radius: 4px; outline: none;">
+                        <option value="Fio Fino">Fio Fino (Ideal para preenchimento sutil)</option>
+                        <option value="Fio Médio">Fio Médio (Padrão adaptável premium)</option>
+                    </select>
+                </div>
+
+                <button class="btn-gold" onclick="salvarEAvancar()" style="width: 100%; padding: 15px; background: #bfa15f; color: #000; border: none; border-radius: 4px; font-weight: bold; font-size: 1rem; cursor: pointer;">SALVAR CONFIGURAÇÃO FINAL <span>▶</span></button>
             </section>
 
         </div>
@@ -133,7 +127,6 @@
             <p>© 2026 Wagner Oliveira Mega Hair. Todos os direitos reservados.</p>
         </div>
     </footer>
-
     <script src="main.js"></script>
 </body>
 </html>
