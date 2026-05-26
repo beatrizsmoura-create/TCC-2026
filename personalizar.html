@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalizar - Wagner Oliveira Mega Hair</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="LOGO.png" alt="Wagner Oliveira Logo" class="brand-logo-img">
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html">INÍCIO</a>
+                <a href="catalogo.html">CATÁLOGO</a>
+                <a href="personalizar.html" class="active">PERSONALIZAR</a>
+                <a href="#">SOBRE</a>
+                <a href="#">CONTATO</a>
+            </nav>
+            <div class="header-actions">
+                <button><i class="bi bi-search"></i></button>
+                <button><i class="bi bi-cart"></i></button>
+                <button><i class="bi bi-person"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="catalog-page-container">
+        <div class="custom-grid-container">
+            
+            <section class="custom-column">
+                <div class="custom-preview-side">
+                    <h2 class="section-title">SEU PRODUTO</h2>
+                    <div class="title-underline"></div>
+                    
+                    <div id="custom-product-image" class="custom-product-image-box">
+                        <div class="custom-product-image-placeholder">
+                            <i class="bi bi-image"></i>
+                        </div>
+                    </div>
+                    
+                    <h3 id="custom-product-name" class="product-name" style="font-size: 1.6rem; text-align: center; margin-bottom: 15px;">Nenhum item selecionado</h3>
+                    
+                    <div class="resumo-detalhes">
+                        <h4>CONFIGURAÇÃO DO SEU MEGA HAIR:</h4>
+                        <p><strong>Cor:</strong> <span id="resumo-cor">Padrão</span></p>
+                        <p><strong>Comprimento:</strong> <span id="resumo-comprimento">Padrão</span></p>
+                        <p><strong>Textura:</strong> <span id="resumo-textura">Padrão</span></p>
+                        <p><strong>Espessura do Fio:</strong> <span id="resumo-espessura">Padrão</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="custom-column">
+                <div class="custom-options-side">
+                    <h2 class="section-title" style="text-align: left;">ALTERAR ESPECIFICAÇÕES</h2>
+                    <div class="title-underline" style="margin-left: 0;"></div>
+
+                    <div class="custom-select-group">
+                        <label>1. ALTERAR COR DO CABELO</label>
+                        <select id="change-cor" onchange="atualizarEspecificacoesDaPagina()" class="custom-select-field">
+                            <option value="Loiro Mel">Loiro Mel</option>
+                            <option value="Castanho Escuro">Castanho Escuro</option>
+                            <option value="Loiro Platinado">Loiro Platinado</option>
+                            <option value="Preto Natural">Preto Natural</option>
+                            <option value="Castanho Médio">Castanho Médio</option>
+                            <option value="Loiro Claro">Loiro Claro</option>
+                        </select>
+                    </div>
+
+                    <div class="custom-select-group">
+                        <label>2. ALTERAR COMPRIMENTO</label>
+                        <select id="change-comprimento" onchange="atualizarEspecificacoesDaPagina()" class="custom-select-field">
+                            <option value="50 cm">50 cm</option>
+                            <option value="55 cm">55 cm</option>
+                            <option value="60 cm">60 cm</option>
+                            <option value="65 cm">65 cm</option>
+                            <option value="70 cm">70 cm</option>
+                        </select>
+                    </div>
+
+                    <div class="custom-select-group">
+                        <label>3. ALTERAR TEXTURA DO FIO</label>
+                        <select id="change-textura" onchange="atualizarEspecificacoesDaPagina()" class="custom-select-field">
+                            <option value="Liso Natural">Liso Natural</option>
+                            <option value="Ondulado">Ondulado</option>
+                            <option value="Cacheado">Cacheado</option>
+                        </select>
+                    </div>
+
+                    <div class="custom-select-group" style="margin-bottom: 35px;">
+                        <label>4. ALTERAR ESPESSURA DO FIO</label>
+                        <select id="change-espessura" onchange="atualizarEspecificacoesDaPagina()" class="custom-select-field">
+                            <option value="Fio Fino">Fio Fino (Ideal para preenchimento sutil)</option>
+                            <option value="Fio Médio">Fio Médio (Padrão adaptável premium)</option>
+                        </select>
+                    </div>
+
+                    <button class="btn-gold" onclick="salvarEAvancar()" style="width: 100%;">SALVAR CONFIGURAÇÃO FINAL <span>▶</span></button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col-brand">
+                <div class="logo footer-logo">
+                    <img src="LOGO.png" alt="Wagner Oliveira Logo" class="brand-logo-img">
+                </div>
+                <p class="brand-footer-text">Excelência em Mega Hair com fios selecionados e um atendimento exclusivo</p>
+            </div>
+            <div class="footer-col">
+                <h4>MENU</h4>
+                <a href="index.html">Início</a>
+                <a href="catalogo.html">Catálogo</a>
+                <a href="personalizar.html">Personalizar</a>
+                <a href="#">Sobre</a>
+                <a href="#">Contato</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Wagner Oliveira Mega Hair. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
