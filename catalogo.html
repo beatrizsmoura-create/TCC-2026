@@ -7,9 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,7 +20,7 @@
             <nav class="nav-menu">
                 <a href="index.html">INÍCIO</a>
                 <a href="catalogo.html" class="active">CATÁLOGO</a>
-                <a href="#">PERSONALIZAR</a>
+                <a href="personalizar.html">PERSONALIZAR</a>
                 <a href="#">SOBRE</a>
                 <a href="#">CONTATO</a>
             </nav>
@@ -34,68 +32,76 @@
         </div>
     </header>
 
-    <main class="catalog-page-container">
-        
-        <aside class="sidebar-filters">
-            <h2 class="sidebar-title">FILTROS</h2>
+    <main class="catalog-page-container" style="padding-top: 40px; padding-bottom: 80px;">
+        <div style="max-width: 1300px; margin: 0 auto; padding: 0 25px;">
             
-            <div class="filter-box-vertical">
-                <label>COMPRIMENTO</label>
-                <select id="cat-comprimento">
-                    <option>Todos</option>
-                    <option>50 cm</option>
-                    <option>55 cm</option>
-                    <option>60 cm</option>
-                </select>
+            <h2 class="section-title" style="font-size: 2.3rem; text-align: center; margin-bottom: 10px;">NOSSO CATÁLOGO</h2>
+            <div class="title-underline" style="width: 80px; height: 3px; background: #bfa15f; margin: 0 auto 40px auto;"></div>
+
+            <div style="display: flex; gap: 35px; align-items: flex-start;">
+                
+                <aside style="width: 280px; min-width: 280px; background: #111; border: 1px solid #262626; padding: 30px 25px; border-radius: 6px;">
+                    <h3 style="font-size: 0.85rem; color: #bfa15f; letter-spacing: 2px; font-weight: 700; margin-bottom: 25px; text-transform: uppercase;">FILTRAR PRODUTOS</h3>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; font-size: 0.8rem; color: #a3a3a3; margin-bottom: 8px; letter-spacing: 1px;">COR</label>
+                        <select style="width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #262626; color: #fff; border-radius: 4px; outline: none;">
+                            <option value="">Todas as cores</option>
+                            <option value="loiro">Loiro</option>
+                            <option value="castanho">Castanho</option>
+                            <option value="preto">Preto</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; font-size: 0.8rem; color: #a3a3a3; margin-bottom: 8px; letter-spacing: 1px;">COMPRIMENTO</label>
+                        <select style="width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #262626; color: #fff; border-radius: 4px; outline: none;">
+                            <option value="">Todos os tamanhos</option>
+                            <option value="50">50 cm</option>
+                            <option value="60">60 cm</option>
+                            <option value="70">70 cm</option>
+                        </select>
+                    </div>
+
+                    <button style="width: 100%; background: #bfa15f; color: #000; padding: 12px; font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; border: none; border-radius: 4px; cursor: pointer; text-transform: uppercase;">APLICAR FILTROS</button>
+                </aside>
+
+                <section style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 1px solid #262626; padding-bottom: 15px;">
+                        <span style="font-size: 0.9rem; color: #a3a3a3;">Mostrando todos os produtos premium</span>
+                    </div>
+
+                    <div class="products-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                        
+                        <div class="product-card">
+                            <div class="product-image"><img src="loiro-mel.jpg" alt="Loiro Mel"></div>
+                            <h3 class="product-name">Loiro Mel</h3>
+                            <p class="product-meta">50-60cm, 120-150g, Textura Lisa</p>
+                            <p class="product-price">R$ 1.890</p>
+                            <button class="btn-card-action" onclick="window.location.href='personalizar.html'">PERSONALIZAR</button>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image"><img src="castanho-escuro.jpg" alt="Castanho Escuro"></div>
+                            <h3 class="product-name">Castanho Escuro</h3>
+                            <p class="product-meta">50-60cm, 120-150g, Textura Lisa</p>
+                            <p class="product-price">R$ 1.690</p>
+                            <button class="btn-card-action" onclick="window.location.href='personalizar.html'">PERSONALIZAR</button>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image"><img src="loiro-platinado.jpg" alt="Loiro Platinado"></div>
+                            <h3 class="product-name">Loiro Platinado</h3>
+                            <p class="product-meta">50-60cm, 120-150g, Textura Lisa</p>
+                            <p class="product-price">R$ 2.190</p>
+                            <button class="btn-card-action" onclick="window.location.href='personalizar.html'">PERSONALIZAR</button>
+                        </div>
+
+                    </div>
+                </section>
+
             </div>
-
-            <div class="filter-box-vertical">
-                <label>COR</label>
-                <select id="cat-cor">
-                    <option>Todos</option>
-                    <option>Loiro Mel</option>
-                    <option>Castanho Escuro</option>
-                    <option>Loiro Platinado</option>
-                    <option>Preto Natural</option>
-                    <option>Castanho Médio</option>
-                    <option>Loiro Claro</option>
-                </select>
-            </div>
-
-            <div class="filter-box-vertical">
-                <label>TEXTURA</label>
-                <select id="cat-textura">
-                    <option>Todos</option>
-                    <option>Liso</option>
-                    <option>Ondulado</option>
-                </select>
-            </div>
-
-            <div class="filter-box-vertical">
-                <label>DISPONIBILIDADE</label>
-                <select id="cat-disponibilidade">
-                    <option>Todos</option>
-                    <option>Em Estoque</option>
-                    <option>Sob Encomenda</option>
-                </select>
-            </div>
-
-            <button class="btn-sidebar-filter" onclick="filtrarCatalogo()">FILTRAR ⚙️</button>
-        </aside>
-
-        <section class="catalog-main-content">
-            <div class="results-count">
-                <span id="contador-resultados">6 resultados encontrados</span>
-            </div>
-
-            <div class="products-catalog-grid" id="catalogo-produtos-grid">
-                </div>
-
-            <div class="load-more-wrapper">
-                <button class="btn-load-more">CARREGAR MAIS</button>
-            </div>
-        </section>
-
+        </div>
     </main>
 
     <footer class="main-footer">
@@ -110,22 +116,9 @@
                 <h4>MENU</h4>
                 <a href="index.html">Início</a>
                 <a href="catalogo.html">Catálogo</a>
-                <a href="#">Personalizar</a>
+                <a href="personalizar.html">Personalizar</a>
                 <a href="#">Sobre</a>
                 <a href="#">Contato</a>
-            </div>
-            <div class="footer-col">
-                <h4>INFORMAÇÕES</h4>
-                <a href="#">Perguntas Frequentes</a>
-                <a href="#">Política de Privacidade</a>
-                <a href="#">Trocas e Devoluções</a>
-                <a href="#">Termo de Uso</a>
-            </div>
-            <div class="footer-col">
-                <h4>ATENDIMENTO</h4>
-                <a href="#">💬 Fale no WhatsApp</a>
-                <a href="#">🗓️ Agende sua avaliação</a>
-                <a href="#">📸 @wagneroliveira.hair</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -133,33 +126,5 @@
         </div>
     </footer>
 
-    <div id="modal-personalizar" class="modal-backdrop hidden">
-        <div class="modal-box">
-            <div class="modal-header">
-                <h2 id="modal-title">Personalizar</h2>
-                <button class="close-modal" onclick="closeModal()"><i class="bi bi-x-lg"></i></button>
-            </div>
-            <div class="modal-body">
-                <p class="modal-subtitle">Configure as opções exclusivas para o seu cabelo selecionado.</p>
-                <div class="modal-step">
-                    <label>1. Textura Desejada</label>
-                    <div class="options-row">
-                        <button class="opt-btn" onclick="selectOpt(this, 'textura')">Liso Natural</button>
-                        <button class="opt-btn" onclick="selectOpt(this, 'textura')">Ondulado</button>
-                        <button class="opt-btn" onclick="selectOpt(this, 'textura')">Cacheado</button>
-                    </div>
-                </div>
-                <div class="modal-step">
-                    <label>2. Espessura do Fio</label>
-                    <div class="options-vertical">
-                        <button class="opt-row-btn" onclick="selectOpt(this, 'espessura')"><strong>Fio Fino</strong><span>Ideal para cabelos finos/ralos</span></button>
-                        <button class="opt-row-btn" onclick="selectOpt(this, 'espessura')"><strong>Fio Médio</strong><span>Padrão, se adapta bem à maioria</span></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="main.js"></script>
 </body>
 </html>
