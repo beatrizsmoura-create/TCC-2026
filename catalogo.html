@@ -7,7 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,77 +34,14 @@
         </div>
     </header>
 
-    <main class="catalog-page-container" style="padding-top: 40px; padding-bottom: 80px;">
-        <div style="max-width: 1300px; margin: 0 auto; padding: 0 25px;">
-            
-            <h2 class="section-title" style="font-size: 2.3rem; text-align: center; margin-bottom: 10px;">NOSSO CATÁLOGO</h2>
-            <div class="title-underline" style="width: 80px; height: 3px; background: #bfa15f; margin: 0 auto 40px auto;"></div>
+    <section class="catalog-section">
+        <div class="catalog-container">
+            <h1 class="section-title">NOSSO CATÁLOGO</h1>
+            <div class="title-underline"></div>
 
-            <div style="display: flex; gap: 35px; align-items: flex-start;">
-                
-                <aside style="width: 280px; min-width: 280px; background: #111; border: 1px solid #262626; padding: 30px 25px; border-radius: 6px;">
-                    <h3 style="font-size: 0.85rem; color: #bfa15f; letter-spacing: 2px; font-weight: 700; margin-bottom: 25px; text-transform: uppercase;">FILTRAR PRODUTOS</h3>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <label style="display: block; font-size: 0.8rem; color: #a3a3a3; margin-bottom: 8px; letter-spacing: 1px;">COR</label>
-                        <select style="width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #262626; color: #fff; border-radius: 4px; outline: none;">
-                            <option value="">Todas as cores</option>
-                            <option value="loiro">Loiro</option>
-                            <option value="castanho">Castanho</option>
-                            <option value="preto">Preto</option>
-                        </select>
-                    </div>
-
-                    <div style="margin-bottom: 20px;">
-                        <label style="display: block; font-size: 0.8rem; color: #a3a3a3; margin-bottom: 8px; letter-spacing: 1px;">COMPRIMENTO</label>
-                        <select style="width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #262626; color: #fff; border-radius: 4px; outline: none;">
-                            <option value="">Todos os tamanhos</option>
-                            <option value="50">50 cm</option>
-                            <option value="60">60 cm</option>
-                            <option value="70">70 cm</option>
-                        </select>
-                    </div>
-
-                    <button style="width: 100%; background: #bfa15f; color: #000; padding: 12px; font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; border: none; border-radius: 4px; cursor: pointer; text-transform: uppercase;">APLICAR FILTROS</button>
-                </aside>
-
-                <section style="flex: 1;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 1px solid #262626; padding-bottom: 15px;">
-                        <span style="font-size: 0.9rem; color: #a3a3a3;">Mostrando todos os produtos premium</span>
-                    </div>
-
-                    <div class="products-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
-                        
-                        <div class="product-card">
-                            <div class="product-image"><img src="loiro-mel.jpg" alt="Loiro Mel"></div>
-                            <h3 class="product-name">Loiro Mel</h3>
-                            <p class="product-meta">50-60cm, 120-150g, Textura Lisa</p>
-                            <p class="product-price">R$ 1.890</p>
-                            <button class="btn-card-action" onclick="window.location.href='personalizar.html'">PERSONALIZAR</button>
-                        </div>
-
-                        <div class="product-card">
-                            <div class="product-image"><img src="castanho-escuro.jpg" alt="Castanho Escuro"></div>
-                            <h3 class="product-name">Castanho Escuro</h3>
-                            <p class="product-meta">50-60cm, 120-150g, Textura Lisa</p>
-                            <p class="product-price">R$ 1.690</p>
-                            <button class="btn-card-action" onclick="window.location.href='personalizar.html'">PERSONALIZAR</button>
-                        </div>
-
-                        <div class="product-card">
-                            <div class="product-image"><img src="loiro-platinado.jpg" alt="Loiro Platinado"></div>
-                            <h3 class="product-name">Loiro Platinado</h3>
-                            <p class="product-meta">50-60cm, 120-150g, Textura Lisa</p>
-                            <p class="product-price">R$ 2.190</p>
-                            <button class="btn-card-action" onclick="window.location.href='personalizar.html'">PERSONALIZAR</button>
-                        </div>
-
-                    </div>
-                </section>
-
-            </div>
+            <div class="products-grid" id="grid-produtos-catalogo"></div>
         </div>
-    </main>
+    </section>
 
     <footer class="main-footer">
         <div class="footer-container">
@@ -120,11 +59,25 @@
                 <a href="#">Sobre</a>
                 <a href="#">Contato</a>
             </div>
+            <div class="footer-col">
+                <h4>INFORMAÇÕES</h4>
+                <a href="#">Perguntas Frequentes</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Trocas e Devoluções</a>
+                <a href="#">Termo de Uso</a>
+            </div>
+            <div class="footer-col">
+                <h4>ATENDIMENTO</h4>
+                <a href="#">💬 Fale no WhatsApp</a>
+                <a href="#">🗓️ Agende sua avaliação</a>
+                <a href="#">📸 @wagneroliveira.hair</a>
+            </div>
         </div>
         <div class="footer-bottom">
             <p>© 2026 Wagner Oliveira Mega Hair. Todos os direitos reservados.</p>
         </div>
     </footer>
 
+    <script src="main.js"></script>
 </body>
 </html>
