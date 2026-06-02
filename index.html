@@ -20,16 +20,30 @@
                 <img src="LOGO.png" alt="Wagner Oliveira Logo" class="brand-logo-img">
             </div>
             <nav class="nav-menu">
+                <a href="login.html">LOGIN</a>
                 <a href="index.html" class="active">INÍCIO</a>
                 <a href="catalogo.html">CATÁLOGO</a>
                 <a href="personalizar.html">PERSONALIZAR</a>
-                <a href="#">SOBRE</a>
-                <a href="#">CONTATO</a>
+                <a href="sobre.html">SOBRE</a>
+                <a href="contato.html">CONTATO</a>
             </nav>
             <div class="header-actions">
-                <button><i class="bi bi-search"></i></button>
-                <button><i class="bi bi-cart"></i></button>
-                <button><i class="bi bi-person"></i></button>
+                <button title="Pesquisar"><i class="bi bi-search"></i></button>
+                <button title="Carrinho"><i class="bi bi-cart"></i></button>
+                
+                <div class="user-auth-wrapper" style="display: inline-flex; align-items: center;">
+                    <a href="login.html" id="btn-login-header" title="Entrar no Atelier" style="display: flex; align-items: center; color: #a3a3a3;">
+                        <i class="bi bi-person" style="font-size: 1.2rem;"></i>
+                    </a>
+
+                    <div id="perfil-usuario" class="user-profile-box" style="display: none;">
+                        <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Foto de Perfil" id="foto-usuario">
+                        <span id="nome-usuario">Cliente</span>
+                        <button id="btn-logout" class="btn-logout" title="Sair">
+                            <i class="bi bi-box-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -43,8 +57,7 @@
                 <button class="btn-gold" onclick="window.location.href='catalogo.html'">ESCOLHER CABELO <span>▶</span></button>
             </div>
             <div class="hero-image-side">
-                <span class="badge-tag">Wagner Oliveira</span>
-                <img src="FOTO 1.avif" alt="Modelo Wagner Oliveira">
+                <img src="FOTO 1.avif" alt="Textura de Mega Hair Premium Wagner Oliveira">
             </div>
         </div>
     </section>
@@ -81,7 +94,7 @@
 
             <div class="products-grid">
                 <div class="product-card">
-                    <img src="FOTO 1.avif" alt="Loiro Mel">
+                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=800&auto=format&fit=crop" alt="Loiro Mel">
                     <h3>Loiro Mel</h3>
                     <p>Cabelo de alta qualidade, fios selecionados, perfeito para alongamento e volume.</p>
                     <span class="price">A partir de R$ 350,00</span>
@@ -89,7 +102,7 @@
                 </div>
 
                 <div class="product-card">
-                    <img src="FOTO 1.avif" alt="Castanho Escuro">
+                    <img src="https://images.unsplash.com/photo-1595959183075-c1d94510358d?q=80&w=800&auto=format&fit=crop" alt="Castanho Escuro">
                     <h3>Castanho Escuro</h3>
                     <p>Cabelo de alta qualidade, fios selecionados, perfeito para alongamento e volume.</p>
                     <span class="price">A partir de R$ 350,00</span>
@@ -97,7 +110,7 @@
                 </div>
 
                 <div class="product-card">
-                    <img src="FOTO 1.avif" alt="Loiro Platinado">
+                    <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?q=80&w=800&auto=format&fit=crop" alt="Loiro Platinado">
                     <h3>Loiro Platinado</h3>
                     <p>Cabelo de alta qualidade, fios selecionados, perfeito para alongamento e volume.</p>
                     <span class="price">A partir de R$ 350,00</span>
@@ -105,7 +118,7 @@
                 </div>
 
                 <div class="product-card">
-                    <img src="FOTO 1.avif" alt="Preto Natural">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop" alt="Preto Natural">
                     <h3>Preto Natural</h3>
                     <p>Cabelo de alta qualidade, fios selecionados, perfeito para alongamento e volume.</p>
                     <span class="price">A partir de R$ 350,00</span>
@@ -133,11 +146,12 @@
             </div>
             <div class="footer-col">
                 <h4>MENU</h4>
+                <a href="login.html">Login</a>
                 <a href="index.html">Início</a>
                 <a href="catalogo.html">Catálogo</a>
                 <a href="personalizar.html">Personalizar</a>
-                <a href="#">Sobre</a>
-                <a href="#">Contato</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="contato.html">Contato</a>
             </div>
             <div class="footer-col">
                 <h4>INFORMAÇÕES</h4>
@@ -157,5 +171,7 @@
             <p>© 2026 Wagner Oliveira Mega Hair. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script src="main.js"></script>
 </body>
 </html>
