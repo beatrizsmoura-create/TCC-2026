@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Wagner Oliveira Mega Hair</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        /* RESET E BASE */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background-color: #000;
+            /* ADICIONANDO A IMAGEM DE FUNDO */
+            background-image:url('imagemdefundologin.png'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff; 
+            font-family: 'Lato', sans-serif; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px;
+        }
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .nav-menu a:hover { color: #bfa15f; }
+
+        /* ÁREA DE LOGIN */
+        .login-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 25px;
+        }
+
+        /* CARD CENTRAL MAIS IMPONENTE, LARGO E COM GLOW DOURADO SUAVE */
+        .login-card {
+            background: rgba(8, 8, 8, 0.92); /* Escuro com transparência sutil */
+            width: 100%;
+            max-width: 460px; /* Aumentado para maior imponência */
+            padding: 55px 45px; /* Mais respiro interno */
+            border: 1.5px solid #bfa15f; /* Borda dourada marcante */
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(191, 161, 95, 0.15); /* Sombreamento com aura dourada premium */
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+        }
+
+        /* LOGO E TEXTOS */
+        .logo-circle {
+            width: 130px;
+            height: 130px;
+            background: transparent;
+            color: #bfa15f;
+            border: 2px solid #bfa15f;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: bold;
+            margin: 0 auto 25px auto;
+            box-shadow: 0 0 15px rgba(191, 161, 95, 0.1);
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.65rem;
+            color: #bfa15f;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+         .brand-tagline {
+            font-size: 0.7rem;
+            color: #bfa15f;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 35px;
+            opacity: 0.85;
+            margin-top: 15px;
+        }
+
+        /* FORMULÁRIO */
+        .form-group {
+            text-align: left;
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #bfa15f;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 1.5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid #292929;
+            border-radius: 50px;
+            padding: 15px 22px;
+            color: #fff;
+            outline: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: #bfa15f;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 10px rgba(191, 161, 95, 0.1);
+        }
+
+        .forgot-link {
+            display: block;
+            color: #a3a3a3;
+            text-decoration: none;
+            font-size: 0.8rem;
+            margin-bottom: 25px;
+            transition: 0.3s;
+        }
+
+        .forgot-link:hover { color: #bfa15f; }
+
+        /* BOTÃO */
+        .btn-login {
+            width: 100%;
+            background: #926615; /* Dourado clássico e sóbrio */
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-login:hover {
+            background: #bfa15f;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(191, 161, 95, 0.3);
+        }
+
+        .footer-text {
+            color: #444;
+            font-size: 0.75rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-top: 30px;
+        }
+
+        .back-to-login {
+            display: inline-block;
+            color: #a3a3a3;
+            text-decoration: none;
+            font-size: 0.8rem;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        
+        .back-to-login:hover { color: #bfa15f; }
+    </style>
+</head>
+<body>
+
+    <main class="login-wrapper">
+        
+        <div class="login-card" id="card-login">
+            <div class="logo-circle">W</div>
+            <h1 class="brand-name">Wagner Oliveira</h1>
+            <p class="brand-tagline">Especialista em Mega Hair</p>
+
+            <form id="form-efetuar-login">
+                <div class="form-group">
+                    <label>USUÁRIO / E-MAIL</label>
+                    <input type="email" placeholder="user.sobre@gmail.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label>SENHA</label>
+                    <input type="password" placeholder="********" required>
+                </div>
+
+                <a href="#" class="forgot-link" id="link-ir-cadastro" style="color: #bfa15f; font-weight: bold; margin-bottom: 15px;">Não tem conta? Crie aqui</a>
+                <a href="#" class="forgot-link">Esqueceu sua senha?</a>
+
+                <button type="submit" class="btn-login">Entrar no Atelier</button>
+
+                <div class="footer-text">Secure Access</div>
+            </form>
+        </div>
+
+        <div class="login-card" id="card-cadastro" style="display: none;">
+            <div class="logo-circle">W</div>
+            <h1 class="brand-name">Wagner Oliveira</h1>
+            <p class="brand-tagline">Criar Nova Conta</p>
+
+            <form id="form-criar-cadastro">
+                <div class="form-group">
+                    <label>NOME COMPLETO</label>
+                    <input type="text" placeholder="Seu nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label>E-MAIL</label>
+                    <input type="email" placeholder="seuemail@gmail.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label>TELEFONE / WHATSAPP</label>
+                    <input type="tel" placeholder="(11) 99999-9999" required>
+                </div>
+
+                <div class="form-group">
+                    <label>CRIAR SENHA</label>
+                    <input type="password" placeholder="********" required>
+                </div>
+
+                <button type="submit" class="btn-login">Finalizar Cadastro</button>
+
+                <a href="#" class="back-to-login" id="link-voltar-login">Voltar para o Login</a>
+
+                <div class="footer-text">Secure Access</div>
+            </form>
+        </div>
+
+    </main>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
