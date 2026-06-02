@@ -38,10 +38,52 @@ function carregarPaginaCatalogo() {
     });
 }
 
-// Navegação simples para o botão principal do Hero (se aplicável)
-function goToCatalogPage() {
-    window.location.href = "catalogo.html";
-}
+// Executa funções de carregamento ao iniciar a página
+document.addEventListener("DOMContentLoaded", () => {
+    carregarPaginaCatalogo();
+    inicializarControlesLogin(); // Ativa as configurações da página de login/cadastro
+});
 
-// Inicializa o catálogo assim que o navegador terminar de carregar o HTML
-document.addEventListener("DOMContentLoaded", carregarPaginaCatalogo);
+
+// ==========================================================================
+// LÓGICA EXCLUSIVA PARA A PÁGINA DE LOGIN E CADASTRO (ORGANIZADA DE FORMA EXTERNA)
+// ==========================================================================
+function inicializarControlesLogin() {
+    const cardLogin = document.getElementById('card-login');
+    const cardCadastro = document.getElementById('card-cadastro');
+    
+    const linkIrCadastro = document.getElementById('link-ir-cadastro');
+    const linkVoltarLogin = document.getElementById('link-voltar-login');
+    
+    const formLogin = document.getElementById('form-efetuar-login');
+    const formCadastro = document.getElementById('form-criar-cadastro');
+
+    // Se os elementos não existirem na página atual (ex: index, catalogo), interrompe para não dar erro
+    if (!cardLogin || !cardCadastro) return;
+
+    // Transição para exibir a Tela de Cadastro
+    linkIrCadastro.addEventListener('click', (e) => {
+        e.preventDefault();
+        cardLogin.style.display = 'none';
+        cardCadastro.style.display = 'block';
+    });
+
+    // Transição para retornar para a Tela de Login
+    linkVoltarLogin.addEventListener('click', (e) => {
+        e.preventDefault();
+        cardCadastro.style.display = 'none';
+        cardLogin.style.display = 'block';
+    });
+
+    // Redirecionamento ao enviar formulário de Login para a Home
+    formLogin.addEventListener('submit', (e) => {
+        e.preventDefault();
+        window.location.href = 'index.html';
+    });
+
+    // Redirecionamento ao enviar formulário de Cadastro para a Home
+    formCadastro.addEventListener('submit', (e) => {
+        e.preventDefault();
+        window.location.href = 'index.html';
+    });
+}
