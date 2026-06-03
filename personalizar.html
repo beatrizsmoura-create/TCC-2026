@@ -20,7 +20,6 @@
                 <img src="LOGO.png" alt="Wagner Oliveira Logo" class="brand-logo-img">
             </div>
             <nav class="nav-menu">
-                
                 <a href="index.html">INÍCIO</a>
                 <a href="catalogo.html">CATÁLOGO</a>
                 <a href="personalizar.html" class="active">PERSONALIZAR</a>
@@ -93,7 +92,7 @@
                     </select>
                 </div>
 
-                <div class="filter-box-vertical" style="margin-bottom: 35px;">
+                <div class="filter-box-vertical" style="margin-bottom: 25px;">
                     <label style="color: #bfa15f; font-weight: bold; margin-bottom: 8px; display: block; font-size: 0.85rem; letter-spacing: 1px;">4. ALTERAR ESPESSURA DO FIO</label>
                     <select id="change-espessura" onchange="atualizarEspecificacoesDaPagina()" style="width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #262626; color: #fff; border-radius: 4px; outline: none;">
                         <option value="Fio Fino">Fio Fino (Ideal para preenchimento sutil)</option>
@@ -101,7 +100,12 @@
                     </select>
                 </div>
 
-                <button class="btn-gold" onclick="salvarEAvancar()" style="width: 100%; padding: 15px; background: #bfa15f; color: #000; border: none; border-radius: 4px; font-weight: bold; font-size: 1rem; cursor: pointer;">SALVAR CONFIGURAÇÃO FINAL <span>▶</span></button>
+                <div class="filter-box-vertical custom-textarea-block" style="margin-bottom: 35px;">
+                    <label style="color: #bfa15f; font-weight: bold; margin-bottom: 8px; display: block; font-size: 0.85rem; letter-spacing: 1px;">5. ESPECIFICAÇÕES ADICIONAIS</label>
+                    <textarea id="change-adicionais" placeholder="Ex: Desejo pontas mais cheias, mesclagem sutil com mechas escuras, observações sobre o corte, etc..." rows="4"></textarea>
+                </div>
+
+                <button class="btn-gold" onclick="salvarEAvancar()" style="width: 100%; padding: 15px; background: #bfa15f; color: #000; border: none; border-radius: 4px; font-weight: bold; font-size: 1rem; cursor: pointer;">SALVAR NO CARRINHO <span>▶</span></button>
             </section>
 
         </div>
@@ -118,16 +122,3 @@
             <div class="footer-col">
                 <h4>MENU</h4>
                 <a href="index.html">Início</a>
-                <a href="catalogo.html">Catálogo</a>
-                <a href="personalizar.html">Personalizar</a>
-                <a href="sobre.html">Sobre</a>
-                <a href="contato.html">Contato</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 Wagner Oliveira Mega Hair. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-    <script src="main.js"></script>
-</body>
-</html>
